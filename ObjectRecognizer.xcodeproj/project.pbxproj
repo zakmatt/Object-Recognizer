@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		84A858CF1F10080B009A8969 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A858CE1F10080B009A8969 /* AppDelegate.swift */; };
-		84A858D11F10080B009A8969 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A858D01F10080B009A8969 /* ViewController.swift */; };
+		84A858D11F10080B009A8969 /* RecognizerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A858D01F10080B009A8969 /* RecognizerVC.swift */; };
 		84A858D41F10080B009A8969 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A858D21F10080B009A8969 /* Main.storyboard */; };
 		84A858D61F10080B009A8969 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A858D51F10080B009A8969 /* Assets.xcassets */; };
 		84A858D91F10080B009A8969 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A858D71F10080B009A8969 /* LaunchScreen.storyboard */; };
+		84A858E21F101D90009A8969 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 84A858E11F101D90009A8969 /* Inceptionv3.mlmodel */; };
+		84A858E51F102080009A8969 /* RecognizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A858E41F102080009A8969 /* RecognizedImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84A858CB1F10080B009A8969 /* ObjectRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A858CE1F10080B009A8969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84A858D01F10080B009A8969 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84A858D01F10080B009A8969 /* RecognizerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizerVC.swift; sourceTree = "<group>"; };
 		84A858D31F10080B009A8969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84A858D51F10080B009A8969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84A858D81F10080B009A8969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84A858DA1F10080B009A8969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A858E11F101D90009A8969 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../../Downloads/Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		84A858E41F102080009A8969 /* RecognizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,32 @@
 		84A858CD1F10080B009A8969 /* ObjectRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				84A858E31F102055009A8969 /* Utils */,
+				84A858E01F101D80009A8969 /* Model */,
 				84A858CE1F10080B009A8969 /* AppDelegate.swift */,
-				84A858D01F10080B009A8969 /* ViewController.swift */,
+				84A858D01F10080B009A8969 /* RecognizerVC.swift */,
 				84A858D21F10080B009A8969 /* Main.storyboard */,
 				84A858D51F10080B009A8969 /* Assets.xcassets */,
 				84A858D71F10080B009A8969 /* LaunchScreen.storyboard */,
 				84A858DA1F10080B009A8969 /* Info.plist */,
 			);
 			path = ObjectRecognizer;
+			sourceTree = "<group>";
+		};
+		84A858E01F101D80009A8969 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84A858E11F101D90009A8969 /* Inceptionv3.mlmodel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84A858E31F102055009A8969 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84A858E41F102080009A8969 /* RecognizedImage.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A858D11F10080B009A8969 /* ViewController.swift in Sources */,
+				84A858D11F10080B009A8969 /* RecognizerVC.swift in Sources */,
+				84A858E51F102080009A8969 /* RecognizedImage.swift in Sources */,
+				84A858E21F101D90009A8969 /* Inceptionv3.mlmodel in Sources */,
 				84A858CF1F10080B009A8969 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +336,7 @@
 				84A858DF1F10080B009A8969 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
